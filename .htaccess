@@ -1,0 +1,11 @@
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.shtml
+
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html
+
+RewriteCond /%{REQUEST_FILENAME}.php -f
+RewriteRule ^([a-zA-Z0-9_-\s]+)/$ /$1.php
+
